@@ -315,6 +315,28 @@ table tr:nth-child(even){
     margin-bottom:15px;
 }
 
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
 @media(max-width:768px){
 
 .menu-toggle{
@@ -376,6 +398,14 @@ table tr:nth-child(even){
 
 .reception-card img{
     height:250px;
+}
+
+.gallery{
+    grid-template-columns:1fr;
+}
+
+.gallery img{
+    height:200px;
 }
 
 }
