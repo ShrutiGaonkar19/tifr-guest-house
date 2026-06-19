@@ -24,15 +24,15 @@ body{
 /* HEADER */
 
 header{
-    background:#7fb8e6;
+    background:#0077B6;
     color:white;
 }
 
 .header-top{
-    padding:12px 8%;
+    padding:8px 8%;
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:14px;
 }
 
 .logo{
@@ -42,46 +42,131 @@ header{
 }
 
 .header-top h1{
-    font-size:28px;
+    font-size:25px;
+    color:white;
+    margin-bottom:2px;
 }
 
 .header-top p{
-    font-size:14px;
+    font-size:13px;
+    color:white;
     opacity:0.9;
 }
 
 /* STICKY NAVIGATION */
 
+/* NAVBAR */
+
 .navbar{
-    background:#001834;
+    background:#023E8A;
     position:sticky;
     top:0;
     z-index:9999;
-    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
-.navbar ul{
+.nav-container{
+    width:84%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.nav-menu{
     list-style:none;
     display:flex;
-    justify-content:flex-start;
-    align-items:center;
     gap:8px;
-    padding:10px 8%;
+    padding:10px 0;
 }
 
-.navbar a{
+.nav-menu li{
+    list-style:none;
+}
+
+.nav-menu a{
     color:white;
     text-decoration:none;
     padding:8px 14px;
     border-radius:6px;
     font-size:15px;
     font-weight:500;
-    transition:0.3s;
+    transition:.3s;
 }
 
-.navbar a:hover{
-    background:rgba(255,255,255,0.15);
+.nav-menu a:hover{
+    background:#0096C7;
 }
+
+/* Current page */
+
+.nav-menu a.active{
+    background:white;
+    color:#023E8A;
+    font-weight:bold;
+}
+
+/* Hamburger */
+
+.menu-toggle{
+    display:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+    display:block;
+    padding:12px 0;
+}
+
+.nav-menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#023E8A;
+    flex-direction:column;
+    gap:0;
+    padding:0;
+}
+
+.nav-menu.active{
+    display:flex;
+}
+
+.nav-menu li{
+    width:100%;
+}
+
+.nav-menu a{
+    display:block;
+    padding:15px;
+    border-radius:0;
+    border-top:1px solid rgba(255,255,255,.15);
+}
+
+.nav-menu a.active{
+    background:#0077B6;
+    color:white;
+}
+
+.hero img{
+    height:300px;
+}
+
+.hero-overlay h1{
+    font-size:30px;
+}
+
+}
+
+/* HERO */
 
 .hero{
     position:relative;
@@ -99,7 +184,7 @@ header{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,.35);
 
     display:flex;
     justify-content:center;
@@ -112,6 +197,8 @@ header{
     font-size:38px;
 }
 
+/* MAIN CONTENT */
+
 .container{
     width:85%;
     max-width:1200px;
@@ -120,7 +207,7 @@ header{
 
 .section-title{
     text-align:center;
-    color:#002147;
+    color:#023E8A;
     margin-bottom:18px;
     font-size:32px;
 }
@@ -129,8 +216,10 @@ header{
     background:white;
     padding:25px;
     border-radius:12px;
-    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
+
+/* CARDS */
 
 .card-grid{
     display:grid;
@@ -142,7 +231,8 @@ header{
     background:white;
     padding:25px;
     border-radius:12px;
-    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    border-top:5px solid #0077B6;
     transition:.3s;
 }
 
@@ -151,15 +241,17 @@ header{
 }
 
 .card h3{
-    color:#002147;
+    color:#023E8A;
     margin-bottom:15px;
 }
 
 .price{
     font-size:32px;
-    color:#002147;
+    color:#0077B6;
     font-weight:bold;
 }
+
+/* EATERIES */
 
 .eatery-grid{
     display:grid;
@@ -171,7 +263,12 @@ header{
     background:white;
     border-radius:12px;
     overflow:hidden;
-    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.eatery-card:hover{
+    transform:translateY(-5px);
 }
 
 .eatery-card img{
@@ -185,45 +282,22 @@ header{
 }
 
 .eatery-content h3{
-    color:#002147;
+    color:#023E8A;
     margin-bottom:10px;
 }
 
+/* FOOTER */
+
 footer{
-    background:#002147;
+    background:#023E8A;
     color:white;
     text-align:center;
-    padding:20px;
-    margin-top:50px;
+    padding:25px;
+    margin-top:60px;
 }
 
-@media(max-width:768px){
-
-.hero img{
-    height:280px;
-}
-
-.hero-overlay h1{
-    font-size:30px;
-}
-
-.navbar ul{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:5px;
-    padding:8px;
-}
-
-.navbar a{
-    font-size:13px;
-    padding:6px 8px;
-}
-
-}
 
 </style>
-
 </head>
 
 <body>
@@ -245,7 +319,13 @@ footer{
 
 <nav class="navbar">
 
-<ul>
+<div class="nav-container">
+
+<div class="menu-toggle" id="mobile-menu">
+&#9776;
+</div>
+
+<ul class="nav-menu" id="nav-menu">
 
 <li><a href="https://www.tifr.res.in/" target="_blank">TIFR Home</a></li>
 
@@ -253,13 +333,15 @@ footer{
 
 <li><a href="people.html">People</a></li>
 
-<li><a href="catering.html">Catering</a></li>
+<li><a href="catering.html" class="active">Catering</a></li>
 
 <li><a href="usage.html">Usage Rules</a></li>
 
 <li><a href="contact.html">Contact</a></li>
 
 </ul>
+
+</div>
 
 </nav>
 
@@ -424,6 +506,7 @@ In addition, the guesthouse provides breakfast (included in room rent) and dinne
 
 </div>
 
+
 </section>
 
 <footer>
@@ -433,6 +516,17 @@ In addition, the guesthouse provides breakfast (included in room rent) and dinne
 </p>
 
 </footer>
+
+<script>
+
+const menu=document.getElementById("mobile-menu");
+const nav=document.getElementById("nav-menu");
+
+menu.addEventListener("click",function(){
+    nav.classList.toggle("active");
+});
+
+</script>
 
 </body>
 </html>
