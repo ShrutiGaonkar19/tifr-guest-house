@@ -4,7 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Usage Rules | Ramanujan Guest House</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<title>Usage Rules | TIFR Guest House</title>
 
 <style>
 
@@ -21,61 +24,62 @@ body{
     line-height:1.7;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
     background:#0077B6;
     color:white;
-}
-
-.header-top{
-    padding:8px 8%;
-    display:flex;
-    align-items:center;
-    gap:14px;
-}
-
-.logo{
-    width:65px;
-    height:65px;
-    object-fit:contain;
-}
-
-.header-top h1{
-    font-size:25px;
-    color:white;
-    margin-bottom:2px;
-}
-
-.header-top p{
-    font-size:13px;
-    color:white;
-    opacity:0.9;
-}
-
-/* NAVBAR */
-
-.navbar{
-    background:#023E8A;
     position:sticky;
     top:0;
     z-index:9999;
     box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
-.nav-container{
-    width:84%;
+.header-top{
+    width:90%;
     margin:auto;
+    height:72px;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-.nav-menu{
-    list-style:none;
+.header-left{
     display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    width:70px;
+    height:78px;
+    object-fit:contain;
+}
+
+.header-text h1{
+    font-size:24px;
+    color:white;
+    margin:0;
+}
+
+.header-text p{
+    font-size:12px;
+    margin-top:2px;
+    opacity:.9;
+}
+
+/* Navigation */
+
+.nav-container{
+    display:flex;
+    align-items:center;
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
     gap:8px;
-    padding:10px 0;
+    list-style:none;
 }
 
 .nav-menu li{
@@ -85,16 +89,17 @@ header{
 .nav-menu a{
     color:white;
     text-decoration:none;
-    padding:8px 14px;
-    border-radius:6px;
+    padding:10px 14px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
     font-size:15px;
-    font-weight:500;
     transition:.3s;
 }
 
 .nav-menu a:hover{
     background:#0096C7;
-    color:white;
 }
 
 .nav-menu a.active{
@@ -103,13 +108,16 @@ header{
     font-weight:bold;
 }
 
+.nav-menu i{
+    font-size:16px;
+}
+
 .menu-toggle{
     display:none;
     color:white;
-    font-size:28px;
+    font-size:30px;
     cursor:pointer;
 }
-
 
 /* HERO */
 
@@ -219,20 +227,45 @@ footer{
 
 @media(max-width:768px){
 
+header{
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.header-top{
+    width:95%;
+    height:65px;
+}
+
+.logo{
+    width:55px;
+    height:60px;
+}
+
+.header-text h1{
+    font-size:18px;
+}
+
+.header-text p{
+    display:none;
+}
+
 .menu-toggle{
     display:block;
-    padding:12px 0;
 }
 
 .nav-menu{
     display:none;
     position:absolute;
     top:100%;
-    left:0;
-    width:100%;
+    right:10px;
+    width:240px;
     background:#023E8A;
     flex-direction:column;
-    gap:0;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,.2);
     padding:0;
 }
 
@@ -245,14 +278,14 @@ footer{
 }
 
 .nav-menu a{
-    display:block;
-    padding:15px;
+    width:100%;
+    padding:14px 18px;
     border-top:1px solid rgba(255,255,255,.15);
     border-radius:0;
 }
 
 .nav-menu a.active{
-    background:#0077B6;
+    background:#0096C7;
     color:white;
 }
 
@@ -265,6 +298,7 @@ footer{
 }
 
 }
+
 </style>
 
 </head>
@@ -275,44 +309,68 @@ footer{
 
 <div class="header-top">
 
-<img src="images/tifr-logo.png" class="logo" alt="TIFR Logo">
+    <div class="header-left">
 
-<div>
-    <h1>TIFR Guest House</h1>
-    <p>Tata Institute of Fundamental Research</p>
-</div>
+        <img src="images/tifr-logo.png" class="logo" alt="TIFR Logo">
+
+        <div class="header-text">
+            <h1>TIFR Guest House</h1>
+            <p>Tata Institute of Fundamental Research</p>
+        </div>
+
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        &#9776;
+    </div>
+
+    <nav class="nav-container">
+
+        <ul class="nav-menu" id="nav-menu">
+
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+            </li>
+
+            <li>
+                <a href="people.html">
+                    <i class="fa-solid fa-user-group"></i> People
+                </a>
+            </li>
+
+            <li>
+                <a href="catering.html">
+                    <i class="fa-solid fa-utensils"></i> Catering
+                </a>
+            </li>
+
+            <li>
+                <a href="usage.html" class="active">
+                    <i class="fa-solid fa-book"></i> Usage Rules
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    <i class="fa-solid fa-envelope"></i> Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.tifr.res.in/" target="_blank">
+                    <i class="fa-solid fa-globe"></i> TIFR
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
 
 </div>
 
 </header>
-
-<nav class="navbar">
-
-<div class="nav-container">
-
-<div class="menu-toggle" id="mobile-menu">
-&#9776;
-</div>
-
-<ul class="nav-menu" id="nav-menu">
-
-<li><a href="https://www.tifr.res.in/" target="_blank">TIFR Home</a></li>
-
-<li><a href="index.html">About</a></li>
-
-<li><a href="people.html">People</a></li>
-
-<li><a href="catering.html">Catering</a></li>
-
-<li><a href="usage.html" class="active">Usage Rules</a></li>
-
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
-
-</div>
-
-</nav>
 
 <section class="hero">
 
@@ -355,7 +413,7 @@ All guests and their hosts are requested to read and adhere to these rules. This
 
 <div class="rule-card">
 <h3>Official Visitors Only</h3>
-<p>The Ramanujan House is part of TIFR and is used only for short and medium-term official visitors to the Institute.</p>
+<p>The TIFR House is part of TIFR and is used only for short and medium-term official visitors to the Institute.</p>
 </div>
 
 <div class="rule-card">
@@ -484,7 +542,7 @@ Guests are requested to cooperate fully with security procedures and present ide
 <footer>
 
 <p>
-© Ramanujan Guest House | Tata Institute of Fundamental Research
+© TIFR Guest House | Tata Institute of Fundamental Research
 </p>
 
 </footer>
